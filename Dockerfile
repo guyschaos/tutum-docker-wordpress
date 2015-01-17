@@ -7,7 +7,7 @@ RUN apt-get update && \
   rm -rf /var/lib/apt/lists/*
 
 # Download latest version of Wordpress into /app
-RUN rm -fr /app && git clone --depth=1 https://github.com/WordPress/WordPress.git /app && cd /app && git checkout -b guys 4.1
+RUN rm -fr /app && git clone https://github.com/WordPress/WordPress.git /app && cd /app && git checkout -b guys 4.1
 
 # Configure Wordpress to connect to local DB 
 ADD wp-config.php /app/wp-config.php
