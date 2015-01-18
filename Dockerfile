@@ -12,6 +12,8 @@ RUN rm -fr /app && git clone https://github.com/WordPress/WordPress.git /app && 
 # Configure Wordpress to connect to local DB 
 ADD wp-config.php /app/wp-config.php
 
+# Add backup plugin as a default plugin
+ADD backupwordpress /app/wp-content/plugins/backupwordpress/
 # Modify permissions to allow plugin upload
 RUN chown -R www-data:www-data /app/wp-content /var/www/html
 
